@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Birdy</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
+
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+	<script src="javascript/db.js"></script>
+
+	<script src="javascript/javascript.js"></script>
+
+	<link rel="stylesheet" href="/css/custom.css">
+
+
+
+</head>
+<body onload = "gatherTweets()">
+
+<div class ="page-header" style ="width=100%">
+<h1>Birdy</h1>
+
+<button id="logBtn" onclick ="toggleDialog()">Login</button>
+<label id ="loginName"></label>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal" >
+	<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close" onclick='toggleDialog();'>&times;</span>
+			<h2 id = "modal-header">Log In</h2>
+		</div>
+		<div id ="modal-body" class="modal-body">
+			<div class="details-form-field" style="display: block;">
+				<div>
+					<label>Username:</label>
+					<input id = "username"/>
+				</div>
+				<div class="details-form-field" style="display: block;">
+					<label>Password:</label>
+					<input id = "password" type ="password"/>
+				</div>
+				<div class="details-form-field" style="display: block;">
+					<button id="loginclick" onclick ="login(); toggleDialog();">Login</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</br>
+</br></br></br>
+<div id ="holder">
+		<div id="input-tweet">
+		<input id = "new-tweet" class="typer" maxlength="50"/>
+		<button id="chirpBtn" onclick ="sendTweet()">Chirp</button>
+	</div>
+	<div id ="tweetHolder" class="tweet-holder">
+	</div>
+</div>
+<div class ="page-footer">
+</div>
+</body>
+</html>
